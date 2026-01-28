@@ -14,11 +14,17 @@
     --whatsapp-green: #25D366;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -642,6 +648,35 @@ footer {
 }
 
 /* Responsive */
+/* Tablets Landscape */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .servicos-grid,
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .contato-content {
+        gap: 2rem;
+    }
+}
+
+/* Tablets Portrait */
+@media (max-width: 768px) and (min-width: 481px) {
+    .servicos-grid,
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
     .mobile-menu-toggle {
         display: block;
@@ -723,5 +758,128 @@ footer {
 
     .historia-text {
         padding: 1.5rem;
+    }
+
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.8rem;
+    }
+}
+
+/* Mobile Pequeno */
+@media (max-width: 480px) {
+    .logo-img {
+        height: 40px;
+    }
+
+    .logo-text h1 {
+        font-size: 1.2rem;
+    }
+
+    .logo-text .tagline {
+        font-size: 0.7rem;
+    }
+
+    .hero {
+        padding: 120px 15px 80px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .hero-description {
+        font-size: 0.85rem;
+    }
+
+    section {
+        padding: 60px 15px;
+    }
+
+    section h2 {
+        font-size: 1.75rem;
+    }
+
+    .servico-card,
+    .portfolio-item {
+        margin-bottom: 1rem;
+    }
+
+    .info-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .info-item i {
+        margin-top: 0;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 1.5rem;
+    }
+
+    .btn-primary {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Instagram Link */
+.instagram-link {
+    color: #E4405F;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+.instagram-link:hover {
+    color: var(--primary-orange);
+}
+
+/* Footer Social */
+.footer-social {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.social-link {
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+}
+
+.social-link:hover {
+    color: var(--primary-orange);
+}
+
+.social-link i {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 480px) {
+    .footer-social {
+        flex-direction: column;
+        gap: 0.75rem;
     }
 }
