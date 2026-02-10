@@ -1,0 +1,8 @@
+# Mundial Forrações T.A - robots.txt
+# Permitir todos os robôs de busca
+
+User-agent: *
+Allow: /assets/
+Allow: /index.html
+
+Sitemap: https://mundialforracoes.com.br/sitemap.xml
