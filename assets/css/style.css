@@ -624,8 +624,9 @@ header.scrolled .hamburger::after {
 .timeline-wave-svg {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
     height: 100%;
     z-index: 0;
     pointer-events: none;
@@ -1013,6 +1014,243 @@ header.scrolled .hamburger::after {
     font-size: 0.9rem;
     line-height: 1.65;
     color: var(--gray-400);
+}
+
+/* ================================================
+   PROBLEMA E SOLUÇÃO SECTION
+   ================================================ */
+.section-problema-solucao {
+    background: var(--light);
+}
+
+.problema-solucao-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+.problema-card,
+.solucao-card {
+    background: var(--white);
+    padding: 40px 32px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-100);
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.problema-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ef4444, #f87171);
+    transform: scaleX(0);
+    transition: var(--transition-base);
+    transform-origin: left;
+}
+
+.solucao-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    transform: scaleX(0);
+    transition: var(--transition-base);
+    transform-origin: left;
+}
+
+.problema-card:hover,
+.solucao-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+}
+
+.problema-card:hover::before,
+.solucao-card:hover::before {
+    transform: scaleX(1);
+}
+
+.problema-header,
+.solucao-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--gray-100);
+}
+
+.problema-icon,
+.solucao-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition-base);
+}
+
+.problema-icon {
+    background: linear-gradient(135deg, #ef4444, #f87171);
+    box-shadow: 0 8px 20px rgba(239, 68, 68, 0.25);
+}
+
+.solucao-icon {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    box-shadow: 0 8px 20px var(--primary-glow);
+}
+
+.problema-card:hover .problema-icon,
+.solucao-card:hover .solucao-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.problema-icon i,
+.solucao-icon i {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.problema-header h3,
+.solucao-header h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin: 0;
+}
+
+.problema-lista,
+.solucao-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.problema-lista li,
+.solucao-lista li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.problema-lista li i,
+.solucao-lista li i {
+    font-size: 1.3rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+    width: 24px;
+    text-align: center;
+}
+
+.problema-lista li i {
+    color: #ef4444;
+}
+
+.solucao-lista li i {
+    color: var(--primary);
+}
+
+.problema-lista li div,
+.solucao-lista li div {
+    flex: 1;
+}
+
+.problema-lista li strong,
+.solucao-lista li strong {
+    display: block;
+    font-family: var(--font-primary);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+}
+
+.problema-lista li p,
+.solucao-lista li p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--gray-400);
+    margin: 0;
+}
+
+.problema-solucao-cta {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: var(--radius-lg);
+    padding: 48px 40px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.problema-solucao-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.problema-solucao-cta h3 {
+    font-family: var(--font-primary);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.problema-solucao-cta p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 28px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.problema-solucao-cta .btn-primary {
+    background: var(--white);
+    color: var(--primary);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.problema-solucao-cta .btn-primary:hover {
+    background: var(--gray-50);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
 }
 
 /* ================================================
@@ -2042,6 +2280,71 @@ section[id] {
         font-size: 0.8rem;
     }
 
+    /* ---- Problema e Solução ---- */
+    .problema-solucao-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .problema-card,
+    .solucao-card {
+        padding: 32px 24px;
+    }
+
+    .problema-header,
+    .solucao-header {
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+    }
+
+    .problema-icon,
+    .solucao-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .problema-icon i,
+    .solucao-icon i {
+        font-size: 1.3rem;
+    }
+
+    .problema-header h3,
+    .solucao-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .problema-lista,
+    .solucao-lista {
+        gap: 20px;
+    }
+
+    .problema-lista li i,
+    .solucao-lista li i {
+        font-size: 1.2rem;
+    }
+
+    .problema-lista li strong,
+    .solucao-lista li strong {
+        font-size: 1rem;
+    }
+
+    .problema-lista li p,
+    .solucao-lista li p {
+        font-size: 0.9rem;
+    }
+
+    .problema-solucao-cta {
+        padding: 36px 28px;
+    }
+
+    .problema-solucao-cta h3 {
+        font-size: 1.4rem;
+    }
+
+    .problema-solucao-cta p {
+        font-size: 0.98rem;
+    }
+
     /* ---- Vantagens: 2 colunas no tablet ---- */
     .vantagens-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -2288,6 +2591,81 @@ section[id] {
    RESPONSIVE - MOBILE (≤640px)
    ================================================ */
 @media (max-width: 640px) {
+    /* Problema e Solução: ajustes mobile */
+    .problema-solucao-grid {
+        gap: 20px;
+        margin-bottom: 36px;
+    }
+
+    .problema-card,
+    .solucao-card {
+        padding: 28px 20px;
+    }
+
+    .problema-header,
+    .solucao-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+    }
+
+    .problema-icon,
+    .solucao-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .problema-icon i,
+    .solucao-icon i {
+        font-size: 1.2rem;
+    }
+
+    .problema-header h3,
+    .solucao-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .problema-lista,
+    .solucao-lista {
+        gap: 18px;
+    }
+
+    .problema-lista li,
+    .solucao-lista li {
+        gap: 12px;
+    }
+
+    .problema-lista li i,
+    .solucao-lista li i {
+        font-size: 1.1rem;
+        width: 20px;
+    }
+
+    .problema-lista li strong,
+    .solucao-lista li strong {
+        font-size: 0.95rem;
+    }
+
+    .problema-lista li p,
+    .solucao-lista li p {
+        font-size: 0.88rem;
+    }
+
+    .problema-solucao-cta {
+        padding: 32px 24px;
+    }
+
+    .problema-solucao-cta h3 {
+        font-size: 1.25rem;
+    }
+
+    .problema-solucao-cta p {
+        font-size: 0.92rem;
+        margin-bottom: 24px;
+    }
+
     /* Vantagens: 1 coluna em mobile */
     .vantagens-grid {
         grid-template-columns: 1fr;
