@@ -402,9 +402,9 @@ function initLeafletMap() {
                 Av. Naihma Name, 1121<br>
                 Maringá - PR
             </p>
-            <a href="https://wa.me/5544999111647" target="_blank"
+            <a href="https://wa.me/5544998575804" target="_blank"
                style="color: #25D366; text-decoration: none; font-weight: 600; font-size: 13px; display: inline-flex; align-items: center; gap: 4px;">
-                📱 (44) 9 9911-1647
+                📱 (55) 44 99857-5804
             </a>
         </div>
     `).openPopup();

@@ -98,7 +98,7 @@ const apiKey = process.env.GOOGLE_MAPS_API_KEY;
 ## Informações de Contato
 
 - **Endereço:** Rua Campos Sales, 1660, Maringá - PR
-- **WhatsApp:** (44) 9 9911-1647
+- **WhatsApp:** 5544998575804
 
 ## Tecnologias Utilizadas
 
